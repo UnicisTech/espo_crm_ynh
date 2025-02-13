@@ -106,12 +106,12 @@ fi
 
 mkdir -p "$install_dir/www"
 
-if [ $with_sftp -eq 1 ]
-then
-    ynh_add_config --template="../sources/www/index.html" --destination="$install_dir/www/index.html"
-else
-    ynh_add_config --template="../sources/www/index_no_sftp.html" --destination="$install_dir/www/index.html"
-fi
+#if [ $with_sftp -eq 1 ]
+#then
+#    ynh_add_config --template="../sources/www/index.html" --destination="$install_dir/www/index.html"
+#else
+#    ynh_add_config --template="../sources/www/index_no_sftp.html" --destination="$install_dir/www/index.html"
+#fi
 
 chown -R $app:www-data "$install_dir"
 # Home directory of the user needs to be owned by root to allow
