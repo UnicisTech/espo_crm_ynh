@@ -1,11 +1,11 @@
 packaging_format = 2
 
-id = "my_webapp"
-name = "My Webapp"
-description.en = "Custom Web app with SFTP access to serve static (HTML, CSS, JS) and PHP files"
-description.fr = "Application Web personnalisée avec accès SFTP pour servir des fichiers statiques (HTML, CSS, JS) et PHP"
+id = "espocrm"
+name = "EspoCRM"
+description.en = "EspoCRM – Open Source CRM Application"
+description.fr = "EspoCRM – Open Source CRM Application"
 
-version = "1.0~ynh20"
+version = "9.0.4~ynh1"
 
 maintainers = []
 
@@ -13,7 +13,7 @@ maintainers = []
 license = "GPL-3.0-only"
 
 [integration]
-yunohost = ">= 11.2.4"
+yunohost = ">= 12.0.0"
 architectures = "all"
 multi_instance = true
 ldap = "not_relevant"
