@@ -106,12 +106,8 @@ fi
 
 mkdir -p "$install_dir/www"
 
-#if [ $with_sftp -eq 1 ]
-#then
-#    ynh_add_config --template="../sources/www/index.html" --destination="$install_dir/www/index.html"
-#else
-#    ynh_add_config --template="../sources/www/index_no_sftp.html" --destination="$install_dir/www/index.html"
-#fi
+# Download EspoCRM
+ynh_setup_source "https://github.com/espocrm/espocrm/archive/master.zip" "$install_dir"
 
 chown -R $app:www-data "$install_dir"
 # Home directory of the user needs to be owned by root to allow
@@ -119,7 +115,7 @@ chown -R $app:www-data "$install_dir"
 chown root:root "$install_dir"
 setfacl -m g:$app:r-x "$install_dir"
 setfacl -m g:www-data:r-x "$install_dir"
-chmod 750 "$install_dir"
+chmod 755 "$install_dir"
 
 #=================================================
 # PHP-FPM CONFIGURATION
